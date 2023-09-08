@@ -69,7 +69,7 @@ def run(server_class=HTTPServer, handler_class=BaseHTTPRequestHandler):
       httpd.server_close()
 
 
-cnt_select = 103  # Видео с которого стартовать
+cnt_select = 7  # Видео с которого стартовать
 cnt_select -= 1  # так как начинается с нуля
 
 class HttpGetHandler(BaseHTTPRequestHandler):
