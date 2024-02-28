@@ -7,7 +7,7 @@ from http.server import HTTPServer
 
 # Загрузка ссылок
 def load_videos():
-    with open('videos_new.csv', newline='') as File:
+    with open('videos_new.csv', 'r', encoding='utf-8', newline='') as File:
         reader = csv.reader(File)
         videos_url = []
         for row in reader:
@@ -56,6 +56,7 @@ def status_volume_video():
         print(cast.status.volume_level) # проверка
         return cast.status.volume_level
     except:
+        print('Ошибка')
         return None
 
 
@@ -69,7 +70,7 @@ def run(server_class=HTTPServer, handler_class=BaseHTTPRequestHandler):
       httpd.server_close()
 
 
-cnt_select = 7  # Видео с которого стартовать
+cnt_select = 1  # Видео с которого стартовать
 cnt_select -= 1  # так как начинается с нуля
 
 class HttpGetHandler(BaseHTTPRequestHandler):

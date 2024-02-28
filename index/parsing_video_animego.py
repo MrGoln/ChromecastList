@@ -8,12 +8,13 @@ from selenium.webdriver.support import expected_conditions as EC
 # Нажатие нужных кнопок для network
 driver = webdriver.Chrome()
 driver.implicitly_wait(10)
-driver.get('https://animego.org/anime/neveroyatnoe-priklyuchenie-dzhodzho-kamennyy-okean-chast-2-2112')
+driver.get('https://animego.org/anime/istorii-ran-chast-1-zheleznaya-krov-909')
 driver.execute_script("window.scrollTo(0, 1800)")
 driver.find_element(By.XPATH, '/html/body/div[4]/div/div[1]/div/div[1]/div[1]/div[2]/div[1]/div/div[2]/button[2]').click()
 driver.find_element(By.XPATH, '/html/body/div[4]/div/div[1]/div/div[1]/div[1]/div[2]/div[1]/button').click() # доп
 driver.find_element(By.XPATH, '/html/body/nav/div[2]/div/div/ul/li[2]/span').click()# доп
 driver.find_element(By.XPATH, '/html/body/nav/div[2]/div/div/div/div[2]/span[2]/span').click() # доп
+time.sleep(1)
 driver.find_element(By.XPATH, '/html/body/div[4]/div[2]').click() # доп
 for i in driver.find_elements(By.XPATH, '/html/body/div[4]/div/div[1]/div/div[1]/div[1]/div[2]/div[2]/div[1]/div[2]/div/div/div[2]/select/option'):
     i.click()
